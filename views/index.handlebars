@@ -1,0 +1,32 @@
+<div class="jumbotron">
+    <h1>You'll FLIP For These Burgers</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md=4">
+            <form>
+                <label>Enter Burger Name</label>
+                <input id="burgerName">
+            </form>
+            <button class="create-form btn-primary">Submit</button>
+        </div>
+        <div class="col-md=4">
+            <h6>Burgers Devoured</h6>
+            {{#each burgers}}
+            {{#if devoured}}
+            <p>{{this.burger_name}}</p>
+            <button class="delete-burger" id={{this.id}}>Remove Burger</button>
+            {{/if}}
+            {{/each}}
+        </div>
+        <div class="col-md=4">
+            <h6>Uneaten Burgers</h6>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <p>{{this.burger_name}}</p>
+            <button class="change-devoured" id={{this.id}}>Devour Burger</button>
+            {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+</div>
